@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class thecnical_module(models.Model):
-#     _name = 'thecnical_module.thecnical_module'
-#     _description = 'thecnical_module.thecnical_module'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+class TipoCliente(models.Model):
+    _name = 'tipo.cliente'
+    _description = 'Tipos de Cliente'
 
+    name = fields.Char('Nombre', required=True)
+
+# En res.partner
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    tipo_cliente_id = fields.Many2one('tipo.cliente', string='Tipo de Cliente')

@@ -1,0 +1,58 @@
+<odoo>   
+    <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.tipo_cliente</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='default_setting_options']" position="before">
+                
+                    
+                    <setting
+                        id="thecnical_module_binaural_tipo_cliente_rules"
+                        title="Reglas por Tipo de Cliente"
+                        help="Activa reglas automáticas según el tipo de cliente (Mayorista, Distribuidor, etc.)"
+                        string="Reglas por Tipo de Cliente"
+                    >       
+                            <field name="mode_tipo_cliente" />
+                            <div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="descuento_mayorista" widget="percentage"/>
+                                    <label for="descuento_mayorista" string="Descuento Mayorista"/>
+                                </div>                                
+                            </div>
+                            <div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="exigir_rif_mayorista" widget="boolean"/>
+                                    <label for="exigir_rif_mayorista" string="Exigir RIF a Mayoristas"/>                                    
+                                </div>
+                            </div>
+                            <div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="descuento_distribuidor" widget="percentage"/>
+                                    <label for="descuento_distribuidor" string="Descuento Distribuidor"/>
+                                </div>
+                            </div>
+                            <div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="exigir_rif_distribuidor" widget="boolean"/>
+                                    <label for="exigir_rif_distribuidor" string="Exigir rif distribuidor"/>
+                                </div>
+                            </div>
+                            <div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="descuento_vip" widget="percentage"/>
+                                    <label for="descuento_vip" string="Descuento VIP"/>
+                                </div>
+                            </div><div class="row" invisible="not mode_tipo_cliente">
+                                <div class="">
+                                    <field name="exigir_rif_vip" widget="boolean"/>
+                                    <label for="exigir_rif_vip" string="Exigir rif VIP"/>
+                                </div>
+                            </div>
+                            
+                            
+                    </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
