@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='function']" position="before">
-            <field name="tipo_cliente_id" string="Tipo de cliente"/>
+            <field name="tipo_cliente_id" string="Tipo de cliente" options="{'no_create': True, 'no_edit': True, 'no_delete': True}"/>
         </xpath>
     </field>
   </record>

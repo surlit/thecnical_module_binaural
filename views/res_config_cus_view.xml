@@ -13,44 +13,7 @@
                         help="Activa reglas automáticas según el tipo de cliente (Mayorista, Distribuidor, etc.)"
                         string="Reglas por Tipo de Cliente"
                     >       
-                            <field name="mode_tipo_cliente" />
-                            <div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="descuento_mayorista" widget="percentage"/>
-                                    <label for="descuento_mayorista" string="Descuento Mayorista"/>
-                                </div>                                
-                            </div>
-                            <div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="exigir_rif_mayorista" widget="boolean"/>
-                                    <label for="exigir_rif_mayorista" string="Exigir RIF a Mayoristas"/>                                    
-                                </div>
-                            </div>
-                            <div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="descuento_distribuidor" widget="percentage"/>
-                                    <label for="descuento_distribuidor" string="Descuento Distribuidor"/>
-                                </div>
-                            </div>
-                            <div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="exigir_rif_distribuidor" widget="boolean"/>
-                                    <label for="exigir_rif_distribuidor" string="Exigir rif distribuidor"/>
-                                </div>
-                            </div>
-                            <div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="descuento_vip" widget="percentage"/>
-                                    <label for="descuento_vip" string="Descuento VIP"/>
-                                </div>
-                            </div><div class="row" invisible="not mode_tipo_cliente">
-                                <div class="">
-                                    <field name="exigir_rif_vip" widget="boolean"/>
-                                    <label for="exigir_rif_vip" string="Exigir rif VIP"/>
-                                </div>
-                            </div>
-                            
-                            
+                        <field name="mode_tipo_cliente" />                            
                     </setting>
             </xpath>
         </field>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Acción: abre la lista de tipos de cliente -->
+    <record id="action_tipo_cliente" model="ir.actions.act_window">
+        <field name="name">Tipos de Cliente</field>
+        <field name="res_model">tipo.cliente</field>
+         <field name="domain">[]</field> 
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crear un nuevo tipo de cliente
+            </p>
+        </field>
+    </record>
+
+    <!-- Menú: dentro de Facturación → Configuración -->
+    <menuitem
+        id="menu_tipo_cliente_config"
+        name="Tipos de Cliente"
+        parent="account.menu_finance_configuration"
+        action="action_tipo_cliente"
+        groups="account.group_account_manager"
+        sequence="50"
+
+    />
+
+</odoo>

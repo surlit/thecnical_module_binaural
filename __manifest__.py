@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "thecnical_module",
+    'name': "Thecnical Module",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Thecnical Module",
 
     'description': """
 Long description of module's purpose
@@ -19,13 +19,16 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account'],
+    'depends': ['base','contacts','account'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/tipo_cliente_data.xml',
         'views/views_res_partner_custom.xml',
         'views/res_config_cus_view.xml',
+        'views/tipo_cliente_view.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
