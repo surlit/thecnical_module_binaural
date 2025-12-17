@@ -11,37 +11,20 @@ class AccountMove(models.Model):
     @api.onchange('product_id')
     def _product_onchange(self):
 
-        _logger.info('\n\n\n\n ')
-        _logger.info('account.move.line')
-        
         ICPSUDO = self.env['ir.config_parameter'].sudo()
         
-        mayorista = ICPSUDO.get_param('thecnical_binaural.descuento_mayorista')
-        distribuidor = ICPSUDO.get_param('thecnical_binaural.descuento_distribuidor')
-        vip = ICPSUDO.get_param('thecnical_binaural.descuento_vip')
-        if mayorista:
-            mayorista = float(mayorista)
-        if distribuidor:
-            distribuidor = float(distribuidor)
-        if vip:
-            vip = float(vip)
-        _logger.info('mayorista')
-        _logger.info(mayorista)
-        _logger.info('distribuidor')
-        _logger.info(distribuidor)
-        _logger.info('vip')
-        _logger.info(vip)
+        mode_cliente = ICPSUDO.get_param('thecnical_binaural.modo_tipo_cliente')
         
         for s in self:
 
             if not s.partner_id:
                 raise UserError(_("Por favor, seleccione un cliente antes de continuar."))
             
-            _logger.info(s)
-            # _logger.info(s.read())
-            _logger.info(s.partner_id)
-            if s.partner_id.tipo_cliente_id:
-                _logger.info(s.partner_id.tipo_cliente_id.read())
+            if mode_cliente and s.partner_id.tipo_cliente_id and s.partner_id.tipo_cliente_id.descuento:
+                
+                self.discount = s.partner_id.tipo_cliente_id.descuento 
+                
+                
             
             
             

@@ -6,20 +6,20 @@ _logger = logging.getLogger(__name__)
 
 class AccountMove(models.Model):
     _inherit = 'account.move'
-
     
-    # @api.onchange('invoice_line_ids')
-    # def _invoice_line_ids_onchange(self):
+    @api.onchange('invoice_line_ids')
+    def _invoice_line_ids_onchange(self):
 
-    #     _logger.info('\n\n\n\n ')
-    #     _logger.info('invoice_line_ids')
+        _logger.info('\n\n\n\n ')
+        _logger.info('invoice_line_ids en account move')
         
-    #     for s in self:
-
-    #         # if not s.partner_id:
-    #         #     raise UserError(_("Por favor, seleccione un cliente antes de continuar."))
+        _logger.info(self.amount_total)
+        _logger.info(self.amount_untaxed)
+        _logger.info(self.amount_untaxed)        
+        
+        
+        for s in self:
             
-    #         _logger.info(s)
-    #         _logger.info(s.partner_id)
-    #         _logger.info(s.partner_id.tipo_cliente_id)
+            _logger.info(s)
+            
             
