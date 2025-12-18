@@ -8,7 +8,7 @@ class AccountMove(models.Model):
 
     
     @api.onchange('product_id')
-    def _product_onchange(self):
+    def _onchange_product_id(self):
 
         ICPSUDO = self.env['ir.config_parameter'].sudo()
         
