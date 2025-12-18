@@ -9,6 +9,7 @@
             <tree editable="top">
                 <field name="name"/>
                 <field name="descuento" />
+                <field name="exigir_rif" />
                 <field name="active"/>
             </tree>
         </field>

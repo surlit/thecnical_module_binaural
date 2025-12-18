@@ -28,6 +28,7 @@ Long description of module's purpose
         'views/views_res_partner_custom.xml',
         'views/res_config_cus_view.xml',
         'views/tipo_cliente_view.xml',
+        'views/account_move.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

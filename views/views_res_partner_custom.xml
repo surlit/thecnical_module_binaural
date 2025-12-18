@@ -7,18 +7,9 @@
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='function']" position="before">
-            <field name="tipo_cliente_id" string="Tipo de cliente" options="{'no_create': True, 'no_edit': True, 'no_delete': True}"/>
+            <field name="tipo_cliente_id" string="Tipo de cliente" options="{'no_create': True, 'no_edit': True, 'no_delete': True,'no_open':True,}"/>
         </xpath>
     </field>
   </record>
-  <!-- <record id="view_partner_form_inherit_tipo_cliente" model="ir.ui.view">
-    <field name="name">res.partner.menu.inherit.tipo.cliente</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="contacts.res_partner_menu_config"/>
-    <field name="arch" type="xml">
-        <xpath expr="//field[@name='function']" position="before">
-            <field name="tipo_cliente_id" string="Tipo de cliente"/>
-        </xpath>
-    </field>
-  </record> -->
+  
 </odoo>

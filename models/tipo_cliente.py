@@ -8,4 +8,4 @@ class TipoCliente(models.Model):
     name = fields.Char('Nombre', required=True)
     descuento = fields.Char('Descuento')
     exigir_rif = fields.Boolean('Exigir Rif') 
-    active  = fields.Boolean('Active')
+    active = fields.Boolean('Active') 
